@@ -29,8 +29,14 @@ public class XlsFileTest {
     }
 
     @Test
-    void xlsxRowTest() {
+    void xlsxTest() {
         String cell = getXlsxFromPath(xlsxFilePath);
+        assertThat(cell, containsString(validText));
+    }
+
+    @Test
+    void xlsxRowTest() {
+        String cell = getCellXlsxFromPath(xlsxFilePath, 0, 2, 2);
         assertThat(cell, containsString(validText));
     }
 }

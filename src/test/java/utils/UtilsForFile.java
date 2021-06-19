@@ -88,4 +88,25 @@ public class UtilsForFile {
         return result;
     }
 
+    public static String getCellXlsxFromPath(String path, int sheetIndex, int rowIndex, int cellIndex){
+        String result = "";
+        XSSFWorkbook myExcelBook = null;
+
+        try {
+            myExcelBook = new XSSFWorkbook(new FileInputStream(path));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        XSSFSheet myExcelSheet = myExcelBook.getSheetAt(sheetIndex);
+        result = myExcelSheet.getRow(rowIndex).getCell(cellIndex).toString();
+
+        try {
+            myExcelBook.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
 }
