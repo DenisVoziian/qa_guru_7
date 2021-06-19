@@ -12,16 +12,11 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static utils.UtilsForFile.*;
 
-public class XlsFileTest extends BaseTest {
+public class XlsFileTest {
 
     private String validText = "Hashimoto";
     private String xlsFilePath = "src/test/resources/1.xls";
-    private String xlsxFilePath = "src/test/resources/1.xlx";
-
-    @BeforeAll
-    static void setUp() {
-        Configuration.startMaximized = true;
-    }
+    private String xlsxFilePath = "src/test/resources/1.xlsx";
 
     @Test
     void xlsSampleTest() throws IOException {
@@ -32,6 +27,12 @@ public class XlsFileTest extends BaseTest {
     @Test
     void xlsRowTest() throws IOException {
         String cell = getCellFromXLS(xlsFilePath, 0, 2, 2);
+        assertThat(cell, containsString(validText));
+    }
+
+    @Test
+    void xlsxRowTest() throws IOException {
+        String cell = getCellFromXLS(xlsxFilePath, 0, 2, 2);
         assertThat(cell, containsString(validText));
     }
 }

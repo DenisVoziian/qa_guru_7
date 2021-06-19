@@ -8,7 +8,7 @@ import java.io.IOException;
 
 import static com.codeborne.pdftest.assertj.Assertions.assertThat;
 
-public class PdfFileTest extends BaseTest{
+public class PdfFileTest{
 
     private String validText = "A Simple PDF File";
     private String pdfFilePath = "src/test/resources/1.pdf";
