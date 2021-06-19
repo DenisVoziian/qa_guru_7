@@ -13,7 +13,8 @@ dependencies {
             "org.junit.jupiter:junit-jupiter-api:5.7.2",
             "org.assertj:assertj-core:3.19.0",
             "com.codeborne:pdf-test:1.6.1",
-            "com.codeborne:xls-test:1.4.3"
+            "com.codeborne:xls-test:1.4.3",
+            "net.lingala.zip4j:zip4j:2.8.0"
     )
     testRuntimeOnly(
             "org.junit.jupiter:junit-jupiter-api:5.7.2"
