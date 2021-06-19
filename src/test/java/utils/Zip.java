@@ -8,4 +8,12 @@ public class Zip {
         ZipFile zipFile = new ZipFile(path);
         zipFile.extractAll(unzipPath);
     }
+
+    public static void unzip(String path, String unzipPath, char[] password) throws ZipException {
+        ZipFile zipFile = new ZipFile(path);
+        if (zipFile.isEncrypted()) {
+            zipFile.setPassword(password);
+        }
+        zipFile.extractAll(unzipPath);
+    }
 }

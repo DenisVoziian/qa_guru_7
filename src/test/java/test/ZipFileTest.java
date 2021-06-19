@@ -14,10 +14,19 @@ public class ZipFileTest {
     private String zipFilePath = "src/test/resources/1.zip";
     private String unzipPath = "src/test/resources/unzip";
     private String txtFilePath = "src/test/resources/unzip/1.txt";
+    private char[] password = {'a', 'b', 'c', 'd'};
 
     @Test
     void zipTest() throws IOException {
         unzip(zipFilePath, unzipPath);
+
+        String actualText = UtilsForFile.readFileToStringFromPath(txtFilePath);
+        assertThat(actualText).contains(validText);
+    }
+
+    @Test
+    void zipWithPassTest() throws IOException {
+        unzip(zipFilePath, unzipPath, password);
 
         String actualText = UtilsForFile.readFileToStringFromPath(txtFilePath);
         assertThat(actualText).contains(validText);
