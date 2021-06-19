@@ -14,7 +14,6 @@ public class TxtFileTest {
     @Test
     void txtTest() throws IOException {
         String actualText = UtilsForFile.readFileToStringFromPath(txtFilePath);
-
         assertThat(actualText).contains(validText);
     }
 }

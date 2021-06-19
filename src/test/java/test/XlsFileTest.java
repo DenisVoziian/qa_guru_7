@@ -1,8 +1,6 @@
 package test;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.xlstest.XLS;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -31,8 +29,8 @@ public class XlsFileTest {
     }
 
     @Test
-    void xlsxRowTest() throws IOException {
-        String cell = getCellFromXLS(xlsxFilePath, 0, 2, 2);
+    void xlsxRowTest() {
+        String cell = getXlsxFromPath(xlsxFilePath);
         assertThat(cell, containsString(validText));
     }
 }
